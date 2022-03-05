@@ -23,3 +23,10 @@ Web
     TCP
     Text 
     HTML (Hypertext) (Another XML vocabulary)
+
+Problem:1
+Write a function "isPrime" which will return true if the given number is prime else false.
+
+Problem:2
+Create a function genPrimes(n) that returns an array of first n prime numbers
+

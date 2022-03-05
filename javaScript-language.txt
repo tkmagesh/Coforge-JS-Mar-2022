@@ -84,3 +84,6 @@ Employee class
 
 Employee e = new Employee()
     e.city = "Bangalore"
+
+Executing the JS?
+    Browser
