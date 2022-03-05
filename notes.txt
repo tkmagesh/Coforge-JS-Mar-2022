@@ -1,0 +1,25 @@
+Magesh Kuppan
+
+Methodology:
+    No powerpoints
+
+Repo:
+    https://github.com/tkmagesh/coforge-js-mar-2022
+
+About You:
+    1. Name
+    2. Primary Skillset
+    3. Exposure to JavaScript
+    4. Any interesting books / shows you read / watched recently
+
+
+Find Me Guilty
+
+JavaScript
+    Programming Language
+
+Web
+    IP
+    TCP
+    Text 
+    HTML (Hypertext) (Another XML vocabulary)

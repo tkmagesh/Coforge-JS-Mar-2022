@@ -1,0 +1,86 @@
+JavaScript
+=============================================================
+
+Data Types
+    number, string, boolean
+    undefined, object, function
+
+Programming Constructs
+    var
+    if else
+    switch case
+    for
+    while
+    try catch finally
+    break continue
+    function
+    etc
+
+APIs
+    Date()
+    Math
+    Array
+    Error()
+    RegEx
+    JSON
+    timer apis (setTimeout, setInterval, clearTimeout, clearInterval)
+    etc
+
+Structure and Interpretation of Computer Programs (SICP)
+
+Line Oriented
+    Fortran
+Procedural Langauge
+    C
+    COBOL
+    Pascal
+Object Based
+    Visal Basic
+Object Oriented Languages
+    C++
+    Java
+    C#
+Functional Languages
+    Haskell
+    Scala
+    Clojure
+    Erlang
+
+JavaScript = Object Based + Functional
+           = Loosely typed
+           = Dynamic
+
+
+var x;
+x = 10;
+x = "abc"
+x = true
+    
+
+//C
+int function add(int x, y) {
+    return x + y;
+} 
+
+add(10,20)
+add("10", "20")
+
+//JS
+function add(x,y) {
+    return x + y;
+}
+
+add(10,20)
+add("10", "20")
+add("abc", 10)
+add([10,20],[30,40])
+add([10,20],[30,"40"])
+add([10,20],[30,40,[50,60]])
+
+Employee class
+    id
+    name
+    salary
+
+Employee e = new Employee()
+    e.city = "Bangalore"
