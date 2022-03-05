@@ -114,4 +114,28 @@ var value = nos.shift()
 
 //Create a function genPrimes(n) that returns an array of first n prime numbers
 
-genPrimes(10) => [1,2,3,5,7,11,13,17,19, 23]
+function isPrime(n){
+    if (n <= 3){
+        return true
+    }
+    for (var i=2; i <= (n/2); i++){
+        if (n % i == 0){
+            return false
+        }
+    }
+    return true
+}
+
+function genPrimes(count){
+    var primeNos = []
+    var no = 1
+    while(count > 0){
+        if (isPrime(no)){
+            primeNos.push(no)
+            count -= 1
+        }
+        no += 1
+    }
+    return primeNos
+}
+
