@@ -443,6 +443,15 @@ nos.reduce(function(x,y){
    return x;
 }, {even : 0, odd : 0})
 
+nos.reduce(function(x,y){
+   if (y % 2 === 0) {
+        x.even.push(y);
+   } else {
+       x.odd.push(y);
+   }
+   return x;
+}, {even : [], odd : []})
+
 
 
 
