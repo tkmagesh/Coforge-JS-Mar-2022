@@ -331,3 +331,65 @@ var logSubtract = logFn(subtract)
 logAdd(100,200)
 logSubtract(100,200)
 
+//create a function 'increment'
+
+
+/* 
+function getIncrement(){
+    var counter = 0;
+    function increment(){
+        counter++
+        return counter;
+    }
+    return increment;
+}
+var increment = getIncrement() 
+*/
+
+var increment  = (function(){
+    var counter = 0;
+    function increment(){
+        counter++
+        return counter;
+    }
+    return increment;
+})()
+
+increment() //=> 1
+increment() //=> 2
+increment() //=> 3
+
+//this context
+//methods => attributes of an object whose value is a function
+/* 
+    IT DOES NOT MATTER WHERE THE FUNCTION IS OR WHO OWNS THE FUNCTION
+    what matters is HOW THE FUNCTION IS INVOKED!!
+*/
+/* 
+    1. When a function is invoked as a method of an object 'obj'
+        this => obj
+
+    2. When a function is invoked as a 'function'
+        this => global scope (window)
+
+    3. Immediately Invoked Function Expression (IIFE)
+
+    4. Using the 'new' keyword (constructor function)
+        this => new object
+        this => returned by default
+    
+*/
+
+//Constructor functions (Convention is that the constructor function names must start with a uppercase)
+function Employee(id, name, salary){
+    //this => new object
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+    //this => returned by default
+}
+
+var e1 = new Employee(100, 'Magesh', 10000)
+var e2 = new Employee(200, 'Suresh', 20000)
+
+//Create a product class using which you can create product objects with id, name, cost, units & category

@@ -36,16 +36,19 @@ Create an array of random numbers
 var nos = [1,2,3,4,5,6,7,8,9,10];
 
 Write a function 'filterEvenNos' which will return an array of even numbers from the given array
-function filterEvenNos(){
+function filterEvenNos(nos){
 
 }
 
 
 Write a function 'filterOddNos' which will return an array of odd numbers from the given array
-function filterOddNos(){
+function filterOddNos(nos){
 
 }
 
 Write a generic function 'filterNos' which will return an array of numbers from the given array (based on the given condition)
+
+
+Use the filterNos function to filter the multiples of 3 or 5
 
 
