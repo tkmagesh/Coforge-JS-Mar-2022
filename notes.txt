@@ -52,3 +52,23 @@ Write a generic function 'filterNos' which will return an array of numbers from 
 Use the filterNos function to filter the multiples of 3 or 5
 
 
+Day-02 Assessment
+Given the following array of products:
+
+var products = [
+	{id : 6, name : 'Pen', cost : 50, units : 20, category : 'stationary'},
+	{id : 9, name : 'Ten', cost : 70, units : 70, category : 'stationary'},
+	{id : 3, name : 'Len', cost : 60, units : 60, category : 'grocery'},
+	{id : 5, name : 'Zen', cost : 30, units : 30, category : 'grocery'},
+	{id : 1, name : 'Ken', cost : 20, units : 80, category : 'utencil'},
+    {id : 7, name : 'Mouse', cost : 100, units : 20, category : 'electronics'}
+];
+
+Write the code for the following:
+(NOTE: DO NOT use a loop)
+
+1. Filter the stationary products
+2. Print the name & cost of the products
+3. Find the minimum cost
+4. Find the product with the least cost
+5. Apply 10% discount on all the products
