@@ -87,3 +87,12 @@ Employee e = new Employee()
 
 Executing the JS?
     Browser
+
+Functions
+    1. support for Variadic functions
+        arguments
+            - length
+            - arguments[0]
+            - arguments[1]
+            - arguments[2]
+            etc

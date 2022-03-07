@@ -129,7 +129,10 @@ function isPrime(n){
 function genPrimes(count){
     var primeNos = []
     var no = 1
-    while(count > 0){
+    while(true){
+        if (count <= 0){
+            break
+        }
         if (isPrime(no)){
             primeNos.push(no)
             count -= 1
@@ -139,3 +142,14 @@ function genPrimes(count){
     return primeNos
 }
 
+//varidadic function
+function sum(){
+    var result = 0;
+    for(var i=0; i < arguments.length; i++){
+        var no = arguments[i];
+        if (!isNaN(no)){
+            result += parseInt(no)
+        }
+    }
+    return result
+}
