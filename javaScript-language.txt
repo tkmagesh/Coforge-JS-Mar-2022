@@ -102,3 +102,15 @@ Functions
         c. functions can be returned as return values from other functions
 
     
+Immediately Invoked Function Expression (IIFE)
+    
+    ex:
+        (function fn(){
+            console.log('fn invoked');
+        })()
+
+        var result = (function add(x,y){
+            return x + y;
+        })(100,200)
+
+        
