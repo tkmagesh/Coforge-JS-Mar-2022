@@ -30,3 +30,22 @@ Write a function "isPrime" which will return true if the given number is prime e
 Problem:2
 Create a function genPrimes(n) that returns an array of first n prime numbers
 
+
+Problem:3
+Create an array of random numbers
+var nos = [1,2,3,4,5,6,7,8,9,10];
+
+Write a function 'filterEvenNos' which will return an array of even numbers from the given array
+function filterEvenNos(){
+
+}
+
+
+Write a function 'filterOddNos' which will return an array of odd numbers from the given array
+function filterOddNos(){
+
+}
+
+Write a generic function 'filterNos' which will return an array of numbers from the given array (based on the given condition)
+
+

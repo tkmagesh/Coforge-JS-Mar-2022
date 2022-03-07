@@ -206,6 +206,9 @@ function logSubtract(x,y){
 */
 
 function logFn(x,y, operation){
+    if (typeof(operation) !== 'function'){
+        throw new Error('operation has to be a function')
+    }
     console.log('invocation started')
     operation(x,y)
     console.log('invocation completed')
@@ -214,3 +217,49 @@ function logFn(x,y, operation){
 //logFn(100,200, add)
 //logFn(100,200, subtract)
 
+
+var nos = [1,2,3,4,5,6,7,8,9,10];
+
+function filterEvenNos(nos){
+    var result = []
+    for (var i=0; i < nos.length; i++){
+        var no = nos[i];
+        if (no % 2 === 0){
+            result.push(no)
+        }
+    }
+    return result
+}
+
+function filterOddNos(nos){
+    var result = []
+    for (var i=0; i < nos.length; i++){
+        var no = nos[i];
+        if (no % 2 !== 0){
+            result.push(no)
+        }
+    }
+    return result
+}
+
+function filterNos(nos, predicate){
+    var result = []
+    for (var i=0; i < nos.length; i++){
+        var no = nos[i];
+        if (predicate(no)){
+            result.push(no)
+        }
+    }
+    return result
+}
+
+function isEven(no){
+    return no % 2 === 0
+}
+
+function isOdd(no){
+    return no % 2 !== 0
+}
+
+var evenNos = filterNos(nos, isEven)
+var oddNos = filterNos(nos, isOdd)
