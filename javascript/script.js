@@ -142,6 +142,8 @@ function genPrimes(count){
     return primeNos
 }
 
+
+/* Day-2 */
 //varidadic function
 function sum(){
     var result = 0;
@@ -263,3 +265,70 @@ function isOdd(no){
 
 var evenNos = filterNos(nos, isEven)
 var oddNos = filterNos(nos, isOdd)
+
+
+function isMultipleOf3(no){
+    return no % 3 === 0;
+}
+
+function isMultipleOf5(no){
+    return no % 5 === 0;
+}
+
+function isMultipleOf3Or5(no){
+    return isMultipleOf3(no) || isMultipleOf5(no)
+}
+
+var multiplesOf3Or5 = filterNos(nos, isMultipleOf3Or5)
+
+/* Functions as return values */
+
+function getFn(){
+    return function(){
+        console.log('fn invoked');
+    }
+}
+
+var fn = getFn()
+fn()
+
+//Use cases
+function add(x,y){
+    var result =  x + y;
+    console.log("add result = ", result)
+}
+
+function subtract(x,y){
+    var result =  x - y;
+    console.log("subtract result = ", result)
+}
+
+/* 
+function logFn(x,y, operation){
+    console.log('invocation started')
+    operation(x,y)
+    console.log('invocation completed')
+}
+
+add(100,200)
+subtract(100,200)
+
+logFn(100,200, add)
+logFn(100,200, subtract) 
+*/
+
+function logFn(operation){
+    return function(x,y){
+        console.log('invocation started')
+        operation(x,y)
+        console.log('invocation completed')
+    }
+}
+
+var logAdd = logFn(add)
+var logSubtract = logFn(subtract)
+
+logAdd(100,200)
+logSubtract(100,200)
+
+
