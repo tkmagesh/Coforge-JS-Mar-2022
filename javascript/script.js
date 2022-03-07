@@ -153,3 +153,64 @@ function sum(){
     }
     return result
 }
+
+
+//higher order functions
+//function statement
+/*
+    function fn(){
+        console.log('fn invoked');
+    }
+*/
+//function expression
+//functions can be assigned as value to a variable
+var fn = function(){
+    console.log('fn invoked');
+}
+
+//Functions as arguments
+function add(x,y){
+    var result =  x + y;
+    console.log("add result = ", result)
+}
+
+function subtract(x,y){
+    var result =  x - y;
+    console.log("subtract result = ", result)
+}
+
+//expected output
+/* 
+invocation started
+add result = 300
+invocation completed
+
+invocation started
+subtract result = -100
+invocation completed 
+*/
+
+
+/* 
+function logAdd(x,y){
+    console.log('invocation started')
+    add(x,y)
+    console.log('invocation completed')
+}
+
+function logSubtract(x,y){
+    console.log('invocation started')
+    subtract(x,y)
+    console.log('invocation completed')
+}  
+*/
+
+function logFn(x,y, operation){
+    console.log('invocation started')
+    operation(x,y)
+    console.log('invocation completed')
+}
+
+//logFn(100,200, add)
+//logFn(100,200, subtract)
+

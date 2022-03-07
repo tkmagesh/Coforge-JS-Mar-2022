@@ -96,3 +96,9 @@ Functions
             - arguments[1]
             - arguments[2]
             etc
+    2. support for higher order functions
+        a. functions can be assigned as value to a variable
+        b. functions can be passed as arguments to other functions
+        c. functions can be returned as return values from other functions
+
+    
