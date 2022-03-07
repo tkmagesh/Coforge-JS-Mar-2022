@@ -393,3 +393,59 @@ var e1 = new Employee(100, 'Magesh', 10000)
 var e2 = new Employee(200, 'Suresh', 20000)
 
 //Create a product class using which you can create product objects with id, name, cost, units & category
+
+//Array Methods
+/* 
+    - sort
+    - filter
+    - reduce
+    - forEach
+    - map
+*/  
+
+var nos = [3,1,4,2,5,7,9,6,8]
+
+//filter
+var evenNos = nos.filter(function(no){
+    return no % 2 === 0;
+});
+
+var oddNos = nos.filter(function(no){
+    return no % 2 !== 0;
+});
+
+//forEach
+for (var i = 0; i < nos.length; i++){
+    console.log(nos[i])
+}
+nos.forEach(function(no){
+    console.log(no);
+})
+
+//map (transformation)
+var newResult = nos.map(function(no){
+    return no * 10;
+})
+
+//reduce (reduction - convert a list of values into one result)
+nos.reduce(function(x,y){
+    var result = x + y;
+    console.log('x = ', x, 'y = ', y, 'result = ', result)
+    return result;
+}, 0)
+
+nos.reduce(function(x,y){
+   if (y % 2 === 0) {
+        x.even = x.even + 1;
+   } else {
+       x.odd = x.odd + 1;
+   }
+   return x;
+}, {even : 0, odd : 0})
+
+
+
+
+
+
+
