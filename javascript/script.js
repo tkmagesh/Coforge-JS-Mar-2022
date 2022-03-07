@@ -331,4 +331,3 @@ var logSubtract = logFn(subtract)
 logAdd(100,200)
 logSubtract(100,200)
 
-
