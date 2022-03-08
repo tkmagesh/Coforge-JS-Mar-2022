@@ -5,6 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <script>
+        var txtNumber1, txtNumber2, divResult
+
+        function onBtnAddClick(){
+            var n1 = parseInt(txtNumber1.value)
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 + n2
+            divResult.innerText = result
+        }
+
+        function onBtnSubtractClick() {
+            var n1 = parseInt(txtNumber1.value)
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 - n2
+            divResult.innerText = result
+        }
+
+         function onBtnMultiplyClick() {
+            var n1 = parseInt(txtNumber1.value)
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 * n2
+            divResult.innerText = result
+        }
+
+        function onBtnDivideClick() {
+            var n1 = parseInt(txtNumber1.value)
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 / n2
+            divResult.innerText = result
+        }
+
+
+        function onDocumentLoad(){
+            var btnAdd = document.getElementById('btnAdd')
+            btnAdd.addEventListener('click', onBtnAddClick);
+
+            var btnSubtract = document.getElementById('btnSubtract')
+            btnSubtract.addEventListener('click', onBtnSubtractClick);
+
+            var btnMultiply = document.getElementById('btnMultiply')
+            btnMultiply.addEventListener('click', onBtnMultiplyClick);
+
+            var btnDivide = document.getElementById('btnDivide')
+            btnDivide.addEventListener('click', onBtnDivideClick);
+
+            txtNumber1 = document.getElementById('txtNumber1')
+            txtNumber2 = document.getElementById('txtNumber2')
+            divResult = document.getElementById('divResult')
+        }
+
+        window.addEventListener('DOMContentLoaded', onDocumentLoad)
+
+    </script>
 </head>
 <body>
     <h1>Calculator</h1>
