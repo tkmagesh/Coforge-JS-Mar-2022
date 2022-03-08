@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        #divTotal{
+            font-size: 20pt;
+        }
+        body{
+            margin: 50px;
+        }
+    </style>
+    <!-- 
+        Products
+            ProductName     Cost
+            Pen             10
+            Pencil          5
+            Marker          50
+            Notebook        25
+
+        1. When the user selects a product from the product list
+            display the product cost (in #spanCost)
+        2. The users the units he wants to buy
+            Pen, 10 Units , & when clicks "add",  total cost = 100
+            Pencil, 10 units, & when clicks "add" total cost = 150
+     -->
+</head>
+<body>
+    <h3>Shopping Cart</h3>
+    <hr>
+    <label for="">Products</label>
+    <select name="" id="">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+    <label for="">Cost : </label>
+    <span id="spanCost"></span>
+    <label for="">Units :</label>
+    <input type="number" name="" id="txtUnits">
+    <button id="btnAdd">Add</button>
+    <div id="divTotal">0</div>
+    <button id="btnClear">Clear</button>
+</body>
+</html>
