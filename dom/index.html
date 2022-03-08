@@ -12,9 +12,30 @@
             font-weight: bold;
         }
     </style>
+    <script>
+        function greetUser() {
+            var txtUserName = document.getElementById('txtUserName')
+            var userName = txtUserName.value
+            var msg = 'Hi ' + userName + '!'
+            var divMessage = document.getElementById('divMessage')
+            divMessage.innerText = msg
+        }
+        function onDocumentLoad(){
+            var btnGreet = document.getElementById('btnGreet')
+            btnGreet.addEventListener('click', greetUser)
+        }
+        window.addEventListener("DOMContentLoaded", onDocumentLoad)
+    </script>
 </head>
 <body>
     <h1 id="heading-1">My App</h1>
+    <h3>Greeter</h3>
+    <hr>
+    <label for="">User Name :</label>
+    <input type="text" name="" id="txtUserName">
+    <button id="btnGreet">Greet</button>
+    <div id="divMessage">[greet message]</div>
+
     <h3>Products</h3>
     <ol id="productList">
         <li>Pen</li>
