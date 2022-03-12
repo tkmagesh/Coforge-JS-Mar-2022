@@ -27,16 +27,86 @@
             Pen, 10 Units , & when clicks "add",  total cost = 100
             Pencil, 10 units, & when clicks "add" total cost = 150
      -->
+     <script>
+         var productCost = {
+             'Pen' : 10,
+             'Pencil' : 5,
+             'Marker' : 50,
+             'Notebook' : 25
+         }
+
+         //overall total
+         var total = 0;
+
+         function onBtnAddClick(){
+            //to get the selected product name   
+            var selectedProduct = document.getElementById('productList').value
+
+            //to get the selected product cost
+            var cost = productCost[selectedProduct];
+
+            //to get the 'units' entered by the user
+            var units = parseInt(document.getElementById('txtUnits').value)
+
+            //calculating the cost
+            var selectedProductCost = cost * units;
+
+            //updating the overall total
+            total += selectedProductCost
+
+            //displaying the over
+            document.getElementById('divTotal').innerText = total;
+
+            //getting the table reference
+            var tableOrderList = document.getElementById('tableOrderList');
+
+            //creating a new row
+            var newRow = document.createElement('tr');
+
+            //create a new column (for the product name)
+            var productNameCol = document.createElement('td');
+
+            //displaying the selected product name in the newly created column
+            productNameCol.innerText = selectedProduct;
+
+            //create a new column (for the product cost)
+            var selectedProductCostCol = document.createElement('td');
+
+            //displaying the calculated cost in the newly created column
+             selectedProductCostCol.innerText = selectedProductCost;
+
+             //appending the newly created columns to the row
+             newRow.appendChild(productNameCol)
+             newRow.appendChild(selectedProductCostCol)
+
+             //appending the newlycreated row to the table
+             tableOrderList.appendChild(newRow)
+         }
+         function onProductListChange(){
+             var selectedProduct = document.getElementById('productList').value
+             var cost = productCost[selectedProduct];
+             document.getElementById('spanCost').innerText = cost;
+         }
+         function onDocumentLoad(){
+             var btnAdd = document.getElementById('btnAdd');
+             btnAdd.addEventListener('click', onBtnAddClick);
+
+             var productList = document.getElementById('productList');
+             productList.addEventListener('change', onProductListChange)
+         }
+         window.addEventListener('DOMContentLoaded', onDocumentLoad)
+     </script>
 </head>
 <body>
     <h3>Shopping Cart</h3>
     <hr>
     <label for="">Products</label>
-    <select name="" id="">
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
+    <select name="" id="productList">
+        <option value="">---Select---</option>
+        <option value="Pen">Pen</option>
+        <option value="Pencil">Pencil</option>
+        <option value="Marker">Marker</option>
+        <option value="Notebook">Notebook</option>
     </select>
     <label for="">Cost : </label>
     <span id="spanCost"></span>
@@ -44,6 +114,11 @@
     <input type="number" name="" id="txtUnits">
     <button id="btnAdd">Add</button>
     <div id="divTotal">0</div>
+    <table id="tableOrderList">
+        
+    </table>
     <button id="btnClear">Clear</button>
+
+   
 </body>
 </html>
