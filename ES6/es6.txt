@@ -1,5 +1,7 @@
 ES6 (ECMAScript 6 / ES2015 / ESNext)
 
+(http://es6-features.org)
+
 1. let
 
 2. const
@@ -82,3 +84,103 @@ ES6 (ECMAScript 6 / ES2015 / ESNext)
     //if the function body has ONLY ONE expression
     var add = (x,y) => x + y;
     add(100,200)
+
+    var nos = [3,1,4,2,5,7,9,6,8]
+
+    //filter
+    var evenNos = nos.filter(no => no % 2 === 0);
+    
+
+    var oddNos = nos.filter(no => no % 2 !== 0);
+    
+
+    //forEach
+    for (var i = 0; i < nos.length; i++){
+        console.log(nos[i])
+    }
+    nos.forEach(no => console.log(no));
+    
+
+    //map (transformation)
+    var newResult = nos.map(no => no * 10);
+    
+
+    //reduce (reduction - convert a list of values into one result)
+    nos.reduce((x,y) => {
+        var result = x + y;
+        console.log('x = ', x, 'y = ', y, 'result = ', result)
+        return result;
+    }, 0)
+
+    nos.reduce((x,y) => {
+    if (y % 2 === 0) {
+            x.even = x.even + 1;
+    } else {
+        x.odd = x.odd + 1;
+    }
+    return x;
+    }, {even : 0, odd : 0})
+    //OR
+    nos.reduce((x,y) => y % 2 == 0 ? {...x, even : x.even + 1} : {...x, odd : x.odd + 1}, {even : 0, odd : 0})
+
+    nos.reduce((x,y) => {
+    if (y % 2 === 0) {
+            x.even.push(y);
+    } else {
+        x.odd.push(y);
+    }
+    return x;
+    }, {even : [], odd : []})
+
+    //OR
+    nos.reduce((x,y) => y % 2 === 0 ? {...x, even : [...x.even, y]} : {...x, odd : [...x.odd, y]} ,  {even : [], odd : []})
+
+11. template literal
+    var x = 100, y = 200
+    //expected result : 'Sum of 100 and 200 is 300'
+    var s1 = 'Sum of ' + x + ' and ' + y + ' is ' + (x+y)
+    var s2 = `Sum of ${x} and ${y} is ${x+y}`
+
+12. iterator (for..of)
+    var nos = [3,1,4,2,5]
+    for (let no of nos){
+        console.log(no)
+    }
+
+13. Classes
+    class Employee{
+        //class level variables
+        id = 0;
+        name = '';
+        salary = 0;
+
+        //constructor method
+        constructor(id, name, salary){
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        //other methods
+        display(){
+            return `id = ${this.id}, name = ${this.name}, salary = ${this.salary}` //template literal
+        }
+    }
+    
+    let emp = new Employee(100, 'Magesh', 10000)
+    emp.display()
+
+    /* Inheritance */
+    class FulltimeEmployee extends Employee {
+        benefits = ''
+        constructor(id, name, salary, benefits){
+            //invoking the base constructor
+            super(id, name, salary);
+            this.benefits = benefits;
+        }
+        //override the methods
+        display(){
+            return `${super.display()}, benefits = ${this.benefits}` //template literal
+        }
+    }
+    var fte = new FulltimeEmployee(200, 'Suresh', 20000, 'Health Insurance')
