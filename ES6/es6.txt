@@ -1,0 +1,55 @@
+ES6 (ECMAScript 6 / ES2015 / ESNext)
+
+1. let
+
+2. const
+
+3. Array destructuring
+    var nos = [3,1,4,2,5]
+    var [x,y] = nos
+
+4. Rest operator (array)
+    var nos = [3,1,4,2,5]
+    var [x,y, ...z] = nos
+
+    function sum(...values){
+        let result = 0;
+        for (let i =0; i < values.length; i++){
+            result += values[i];
+        }
+        return result
+    }
+    sum(10,20)
+    sum(10,20,30,40,50,60)
+
+5. spread operator (array)
+    var nos = [3,1,4,2,5]
+    var newNos = [10, 20, 30, ...nos]
+    sum(...nos)
+    
+6. Object destructuring
+    var emp = {
+        id : 100,
+        name : 'Magesh',
+        salary : 10000,
+    }
+    
+    var { id, salary } = emp
+    OR
+    var { id:x, salary:y } = emp
+
+7. Rest operator (objects)
+    var emp = {
+        id : 100,
+        name : 'Magesh',
+        salary : 10000,
+    }
+    var {id , ...z } = emp
+
+8. Spread operator (objects)
+    var emp = {
+        id : 100,
+        name : 'Magesh',
+        salary : 10000,
+    }
+    var newEmp = { ...emp, city : 'Bengaluru' }
