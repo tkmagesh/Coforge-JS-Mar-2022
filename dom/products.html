@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <script>
+        function onBtnAddNewProduct(){
+            var newProductName = document.getElementById('txtNewProductName').value
+            var newProductItem = document.createElement('li');
+            newProductItem.innerText = newProductName;
+            var olProductsList = document.getElementById('productsList')
+            olProductsList.appendChild(newProductItem)
+        }
+        function onDocumentLoad(){
+            var btnAddNewProduct = document.getElementById('btnAddNewProduct');
+            btnAddNewProduct.addEventListener('click', onBtnAddNewProduct)
+        }
+        window.addEventListener('DOMContentLoaded', onDocumentLoad)
+
+    </script>
+</head>
+    <h1>Products</h1>
+    <hr>
+    <label for="">Product Name :</label>
+    <input type="text" name="" id="txtNewProductName">
+    <button id="btnAddNewProduct">Add Product</button>
+    <ol id="productsList">
+        <li>Pen</li>
+        <li>Pencil</li>
+    </ol>
+</body>
+</html>
