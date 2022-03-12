@@ -45,6 +45,8 @@ Asynchronous operations
         console.log(`   [@service] processing ${x} and ${y}`)
         var promise = new Promise(function(resolveFn, rejectFn){
             setTimeout(function(){
+                if (typeof x === 'undefined' || typeof y === 'undefined')
+                    return rejectFn(new Error("Invalid arguments"))
                 const result = x + y;
                 console.log(`   [@service] returning result`)
                 resolveFn(result);
@@ -61,14 +63,40 @@ Asynchronous operations
             p.catch(failureCallback) //callback 'failureCallback' invoked when the operation is fails
     */
 
-    function addAsyncPromiseClient(x,y){
+    /* function addAsyncPromiseClient(x,y){
         console.log(`[@client] invoking the service`);
         var promise = addAsyncPromise(x,y);
         promise.then(function(result){
             console.log(`[@client] result = ${result}`);
-        })
+        });
+        promise.catch(function(err){
+            console.log('something went wrong. ', err)
+        });
+    } */
+
+    function addAsyncPromiseClient(x,y){
+        console.log(`[@client] invoking the service`);
+        var promise = addAsyncPromise(x,y);
+
+        //promise chaining
+        promise.then(function(result){
+            console.log(`[@client] result = ${result}`);
+        }).catch(function(err){
+            console.log('something went wrong. ', err)
+        });
     }
 
     window['addAsyncPromiseClient'] = addAsyncPromiseClient
+
+   
+
+    //async await
+    async function addAsyncPromiseClient2(x,y){
+        console.log(`[@client] invoking the service`);
+        var result = await addAsyncPromise(x,y);
+        console.log(`[@client] result = ${result}`);
+    }
+
+     window['addAsyncPromiseClient2'] = addAsyncPromiseClient2
 
 })()
