@@ -22,13 +22,13 @@ Asynchronous operations
 
     window['addSyncClient'] = addSyncClient;
 
-    //async
-    function addAsync(x,y, callback){
+    //async (using callback)
+    function addAsync(x,y, callback /* fn */){
         console.log(`   [@service] processing ${x} and ${y}`)
         setTimeout(function(){
             const result = x + y;
             console.log(`   [@service] returning result`)
-            callback(result);
+            callback(result); /* invoking the given function */
         }, 5000)
     }
 
@@ -40,5 +40,35 @@ Asynchronous operations
     }
 
     window['addAsyncClient'] = addAsyncClient;
+
+    function addAsyncPromise(x,y){
+        console.log(`   [@service] processing ${x} and ${y}`)
+        var promise = new Promise(function(resolveFn, rejectFn){
+            setTimeout(function(){
+                const result = x + y;
+                console.log(`   [@service] returning result`)
+                resolveFn(result);
+            }, 5000)
+        })
+        return promise;
+    }
+
+    //window['addAsyncPromise'] = addAsyncPromise;
+
+    /* 
+        subscribing to the promise object (p)
+            p.then(successCallback) //callback 'successCallback' invoked when the operation is successful
+            p.catch(failureCallback) //callback 'failureCallback' invoked when the operation is fails
+    */
+
+    function addAsyncPromiseClient(x,y){
+        console.log(`[@client] invoking the service`);
+        var promise = addAsyncPromise(x,y);
+        promise.then(function(result){
+            console.log(`[@client] result = ${result}`);
+        })
+    }
+
+    window['addAsyncPromiseClient'] = addAsyncPromiseClient
 
 })()
