@@ -53,3 +53,32 @@ ES6 (ECMAScript 6 / ES2015 / ESNext)
         salary : 10000,
     }
     var newEmp = { ...emp, city : 'Bengaluru' }
+
+9. default arguments
+    function add(x=10, y=20){
+        return x + y
+    }
+    add(10,20) //=> 30
+    add(100,200) /=> 300
+
+10. arrow functions
+    /*
+    //function statement
+    function add(x,y){
+        return x + y;
+    }
+
+    //function expression
+    var add = function(x,y){
+        return x + y;
+    }
+
+    //function expresstion -> arrow function
+    var add = (x,y) => {
+        return x + y;
+    }
+    */
+
+    //if the function body has ONLY ONE expression
+    var add = (x,y) => x + y;
+    add(100,200)
