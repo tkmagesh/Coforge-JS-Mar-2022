@@ -104,9 +104,16 @@ Setup the environment
         npm install taiko --save-dev
         npm install jest --save-dev
 
+        Modify the package.json file
+            "scripts": {
+                "test": "jest"
+            }
+
+        > npm test
+
 Jest
     Test files must end with .test.js OR should be in __tests__ folder
-    
+
     describe('Click Tracker', () => {
         it('Should have the "Track" button', () => {
             expect(result).toBe(100); //expect => assertion api, toBe => matcher
