@@ -72,3 +72,35 @@ Write the code for the following:
 3. Find the minimum cost
 4. Find the product with the least cost
 5. Apply 10% discount on all the products
+
+Taiko
+    Interactive
+
+    Taiko Installation
+        npm install -g taiko (onetime)
+
+    Running Taiko
+        taiko
+
+Installing a web server
+    npm install http-server -g (onetime)
+
+From the folder where we want the pages to be accessible using http
+    http-server -c -1 -p 8080
+
+
+
+Setup the environment
+
+    Create a folder 'test-app'
+        npm install http-server -g
+        copy the .html page and related .js files that you want to test to the folder
+        http-server -c -1
+
+    Setup Taiko Test Project
+        Create a folder 'taiko-test-project'
+        cd taiko-test-project
+        npm init -y
+        npm install taiko --save-dev
+
+

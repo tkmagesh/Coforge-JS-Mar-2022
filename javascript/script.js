@@ -9,8 +9,6 @@ while (n <= 10){
     }
 }
 
-
-
 function isPrime(no){
     for (var i = 2; i <= (no/2); i++){
         if (no % i === 0){
