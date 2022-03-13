@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        function onBtnAddClick(){
+            var txtNumber1 = document.getElementById('txtNumber1')
+            var n1 = parseInt(txtNumber1.value)
+            var txtNumber2 = document.getElementById('txtNumber2')
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 + n2
+            var divResult = document.getElementById('divResult')
+            divResult.innerText = result
+        }
+
+        function onBtnSubtractClick() {
+            var txtNumber1 = document.getElementById('txtNumber1')
+            var n1 = parseInt(txtNumber1.value)
+            var txtNumber2 = document.getElementById('txtNumber2')
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 - n2
+            var divResult = document.getElementById('divResult')
+            divResult.innerText = result
+        }
+
+         function onBtnMultiplyClick() {
+            var txtNumber1 = document.getElementById('txtNumber1')
+            var n1 = parseInt(txtNumber1.value)
+            var txtNumber2 = document.getElementById('txtNumber2')
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 * n2
+            var divResult = document.getElementById('divResult')
+            divResult.innerText = result
+        }
+
+        function onBtnDivideClick() {
+            var txtNumber1 = document.getElementById('txtNumber1')
+            var n1 = parseInt(txtNumber1.value)
+            var txtNumber2 = document.getElementById('txtNumber2')
+            var n2 = parseInt(txtNumber2.value)
+            var result = n1 / n2
+            var divResult = document.getElementById('divResult')
+            divResult.innerText = result
+        }
+
+
+        function onDocumentLoad(){
+            var btnAdd = document.getElementById('btnAdd')
+            btnAdd.addEventListener('click', onBtnAddClick);
+
+            var btnSubtract = document.getElementById('btnSubtract')
+            btnSubtract.addEventListener('click', onBtnSubtractClick);
+
+            var btnMultiply = document.getElementById('btnMultiply')
+            btnMultiply.addEventListener('click', onBtnMultiplyClick);
+
+            var btnDivide = document.getElementById('btnDivide')
+            btnDivide.addEventListener('click', onBtnDivideClick);
+
+        }
+
+        window.addEventListener('DOMContentLoaded', onDocumentLoad)
+
+    </script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <hr>
+    <input type="number" name="" id="txtNumber1">
+    <input type="number" name="" id="txtNumber2">
+    <br>
+    <button id="btnAdd">Add</button>
+    <button id="btnSubtract">Subtract</button>
+    <button id="btnMultiply">Multiply</button>
+    <button id="btnDivide">Divide</button>
+    <div id="divResult">Result</div>
+</body>
+</html>

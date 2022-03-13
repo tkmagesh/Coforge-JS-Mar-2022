@@ -17,14 +17,24 @@ const { openBrowser, goto, text, click, below, closeBrowser } = require('taiko')
 })(); 
 */
 describe('Click Tracker', () => {
+    
+    beforeAll(async() => {
+        await openBrowser()
+    })
+
     //beforeEach - will execute the given function BEFORE executing each of the 'it' functions
     beforeEach(async () => {
-        await openBrowser()
         await goto('http://localhost:8080/clickTracker.html')
     })
 
     //afterEach - will execute the given function AFTER executing each of the 'it' functions
+    /* 
     afterEach(async () => {
+        await closeBrowser()
+    }) 
+    */
+
+    afterAll(async () => {
         await closeBrowser()
     })
 
